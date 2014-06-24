@@ -6,7 +6,7 @@ Node + ØMQ
 ## whoami
 
 * Jim R. Wilson (jimbojw)
-* [hexlib@](https://twitter.com/hexlib)
+* [@hexlib](https://twitter.com/hexlib)
 
 ## Why ZeroMQ?
 
