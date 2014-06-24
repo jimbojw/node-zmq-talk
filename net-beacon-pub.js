@@ -11,10 +11,9 @@ const
   });
 
 setInterval(function() {
+  let message = JSON.stringify({ timestamp: Date.now() });
   connections.forEach(function(connection) {
-    connection.write(JSON.stringify({
-      timestamp: Date.now()
-    }));
+    connection.write(message);
   });
 }, 1000);
 
