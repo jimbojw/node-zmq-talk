@@ -3,12 +3,12 @@ node-zmq-talk
 
 Node + ØMQ
 
-# whoami
+## whoami
 
 * Jim R. Wilson (jimbojw)
 * [hexlib@](https://twitter.com/hexlib)
 
-# Why ZeroMQ?
+## Why ZeroMQ?
 
 * Distributed systems
 * Low latency
@@ -18,7 +18,7 @@ Competition is home grown socket-based connectors.
 
 Like SQL databases competed against home grown file based storage.
 
-# Installing
+## Installing
 
 Mac OSX
 
@@ -61,14 +61,14 @@ First pass at troubleshooting (update system library cache):
 sudo ldconfig
 ```
 
-# Patterns
+## Patterns
 
 * PUB/SUB
 * REQ/REP
 * DEALER/ROUTER
 * PUSH/PULL
 
-# Simple PUB/SUB with sockets
+## Simple PUB/SUB with sockets
 
 Becaon application: fires an event once a second.
 
@@ -78,14 +78,14 @@ PUB endpoint: [net-beacon-pub.js](net-beacon-pub.js)
 
 SUB endpoint: [net-beacon-sub.js](net-beacon-sub.js)
 
-# What's Wrong With That?
+## What's Wrong With That?
 
 * Listener bias.
 * Fault intolerant.
 * Leaky buffers.
 * Directionality (Publisher = Listener).
 
-# PUB/SUB with ZMQ
+## PUB/SUB with ZMQ
 
 Same beacon application.
 
