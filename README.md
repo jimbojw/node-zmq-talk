@@ -14,7 +14,17 @@ Node + ØMQ
 * Low latency
 * Patterns!
 
-Competition is home grown socket-based connectors.
+## OSI Model
+
+* Application
+* Presentation
+* Session
+* Transport --- TCP
+* Network --- IP
+* Data Link --- MAC
+* Physical --- wires
+
+ZMQ's competition is home grown socket-based connectors.
 
 Like SQL databases competed against home grown file based storage.
 
@@ -93,4 +103,10 @@ PUB endpoint: [zmq-beacon-pub.js](zmq-beacon-pub.js)
 
 SUB endpoint: [zmq-beacon-sub.js](zmq-beacon-sub.js)
 
+## REQ/REP with ZMQ
 
+Application requests the current time.
+
+REP endpoint: [zmq-time-rep.js](zmq-time-rep.js)
+
+REQ endpoint: [zmq-time-req.js](zmq-time-req.js)
