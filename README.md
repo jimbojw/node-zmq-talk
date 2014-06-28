@@ -5,30 +5,39 @@ Node + ØMQ
 
 ## whoami
 
-* Jim R. Wilson (jimbojw)
-* [@hexlib](https://twitter.com/hexlib)
+* Jim R. Wilson
+* github: [jimbojw](https://github.com/jimbojw)
+* twitter: [@hexlib](https://twitter.com/hexlib)
 
-## Why ZeroMQ?
+## Talk Roadmap
 
-* Distributed systems
-* Low latency
+* Why ØMQ?
+* Installing ØMQ
+* Naive publish/subscribe using Sockets
+* PUB/SUB
+* REQ/REP
+* DEALER/ROUTER
+* PUSH/PULL
+* Questions
+
+## Why ØMQ?
+
+* Distributed
+* Low latency, low-overhead
+* Event driven, non-blocking
 * Patterns!
+* Scalability / Philosophy of Ø
 
-## OSI Model
+## The Network Onion
 
-* Application
-* Presentation
-* Session
-* Transport --- TCP
+* Application, Presentation, Session
+ * SSL, HTTP, SMTP, ØMQ
+* Transport --- TCP, UDP
 * Network --- IP
 * Data Link --- MAC
 * Physical --- wires
 
-ZMQ's competition is home grown socket-based connectors.
-
-Like SQL databases competed against home grown file based storage.
-
-## Installing
+## Installing ØMQ
 
 Mac OSX
 
@@ -47,19 +56,19 @@ make
 sudo make install
 ```
 
-Testing
+Testing the base library.
 
 ```sh
 man zmq
 ```
 
-Install zmq node module
+Install the zmq node module.
 
 ```sh
 npm install zmq
 ```
 
-Testing
+Testing the module.
 
 ```sh
 node --harmony -p -e 'require("zmq")'
@@ -71,22 +80,13 @@ First pass at troubleshooting (update system library cache):
 sudo ldconfig
 ```
 
-## Patterns
+## Naive PUB/SUB with Sockets
 
-* PUB/SUB
-* REQ/REP
-* DEALER/ROUTER
-* PUSH/PULL
+Beacon application: fires an event once a second.
 
-## Simple PUB/SUB with sockets
+PUB program: [net-beacon-pub.js](net-beacon-pub.js)
 
-Becaon application: fires an event once a second.
-
-Nieve implementation using sockets.
-
-PUB endpoint: [net-beacon-pub.js](net-beacon-pub.js)
-
-SUB endpoint: [net-beacon-sub.js](net-beacon-sub.js)
+SUB program: [net-beacon-sub.js](net-beacon-sub.js)
 
 ## What's Wrong With That?
 
@@ -95,18 +95,34 @@ SUB endpoint: [net-beacon-sub.js](net-beacon-sub.js)
 * Leaky buffers.
 * Directionality (Publisher = Listener).
 
-## PUB/SUB with ZMQ
+## PUB/SUB with ØMQ
 
 Same beacon application.
 
-PUB endpoint: [zmq-beacon-pub.js](zmq-beacon-pub.js)
+PUB program: [zmq-beacon-pub.js](zmq-beacon-pub.js)
 
-SUB endpoint: [zmq-beacon-sub.js](zmq-beacon-sub.js)
+SUB program: [zmq-beacon-sub.js](zmq-beacon-sub.js)
 
-## REQ/REP with ZMQ
+## REQ/REP with ØMQ
 
 Application requests the current time.
 
-REP endpoint: [zmq-time-rep.js](zmq-time-rep.js)
+REP program: [zmq-time-rep.js](zmq-time-rep.js)
 
-REQ endpoint: [zmq-time-req.js](zmq-time-req.js)
+REQ program: [zmq-time-req.js](zmq-time-req.js)
+
+## DEALER/ROUTER cluster with ØMQ
+
+DEALER = parallel REQ
+
+ROUTER = parallel REP
+
+![Figure of REP cluster using DEALER/ROUTER](rep-cluster.png)
+
+Cluster responds to time requests just like the previous example.
+
+REP cluster program: [zmq-time-rep-cluster.js](zmq-time-rep-cluster.js)
+
+## PUSH/PULL with ZMQ
+
+_TBD_

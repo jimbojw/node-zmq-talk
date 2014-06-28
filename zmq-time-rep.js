@@ -9,8 +9,8 @@ responder.on('message', function(data) {
   console.log('Received request from: ' + request.pid);
   
   responder.send(JSON.stringify({
-    timestamp: Date.now(),
-    pid: process.pid
+    pid: process.pid,
+    timestamp: Date.now()
   }));
   
 });

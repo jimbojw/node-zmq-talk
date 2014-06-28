@@ -11,9 +11,12 @@ const
   });
 
 setInterval(function() {
-  let message = JSON.stringify({ timestamp: Date.now() });
+  let data = JSON.stringify({
+    pid: process.pid,
+    timestamp: Date.now()
+  });
   connections.forEach(function(connection) {
-    connection.write(message);
+    connection.write(data);
   });
 }, 1000);
 
