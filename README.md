@@ -125,4 +125,29 @@ REP cluster program: [zmq-time-rep-cluster.js](zmq-time-rep-cluster.js)
 
 ## PUSH/PULL with ZMQ
 
-_TBD_
+Simple work queue using PUSH/PULL.
+
+PUSH program: [zmq-work-push.js](zmq-work-push.js)
+
+PULL program: [zmq-work-pull.js](zmq-work-pull.js)
+
+Cluster to demonstrate the First Joiner problem.
+
+PULL cluster program: [zmq-work-pull-cluster.js](zmq-work-pull-cluster.js)
+
+## Wrap Up
+
+* Why ØMQ?
+* PUB/SUB
+* REQ/REP
+* DEALER/ROUTER
+* PUSH/PULL
+
+## Thank You!
+
+For your kind attention.
+
+## Questions?
+
+If there are any?
+
