@@ -1,24 +1,27 @@
 node-zmq-talk
 =============
 
-Node + ØMQ
+Building Distributed Systems with Node.js and ØMQ
+
+A talk for [Node.js in the Wild](http://www.meetup.com/Node-js-in-the-wild/)
 
 ## whoami
 
 * Jim R. Wilson
+* author: [Node.js the Right Way](http://pragprog.com/book/jwnode/node-js-the-right-way) ([on Amazon](http://www.amazon.com/Node-js-Right-Way-Server-Side-JavaScript/dp/1937785734))
 * github: [jimbojw](https://github.com/jimbojw)
 * twitter: [@hexlib](https://twitter.com/hexlib)
 
 ## Talk Roadmap
 
 * Why ØMQ?
-* Installing ØMQ
+* Installing ØMQ (skip)
 * Naive publish/subscribe using Sockets
 * PUB/SUB
 * REQ/REP
 * DEALER/ROUTER
 * PUSH/PULL
-* Questions
+* Questions?
 
 ## Why ØMQ?
 
@@ -83,6 +86,13 @@ sudo ldconfig
 ## Naive PUB/SUB with Sockets
 
 Beacon application: fires an event once a second.
+
+```js
+{
+  "pid": 12345,
+  "timestamp": 1404168475695
+}
+```
 
 PUB program: [net-beacon-pub.js](net-beacon-pub.js)
 
