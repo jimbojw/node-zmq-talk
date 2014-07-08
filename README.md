@@ -1,9 +1,9 @@
-node-zmq-talk
+Building Distributed Systems with Node.js and ØMQ
 =============
 
-Building Distributed Systems with Node.js and ØMQ
+VIDEO! [Building Distributed Systems with Node.js and ØMQ](https://www.youtube.com/watch?v=zgDjaJdAB9c)
 
-A talk for [Node.js in the Wild](http://www.meetup.com/Node-js-in-the-wild/)
+A talk for [Node.js in the Wild](http://www.meetup.com/Node-js-in-the-wild/events/188786272/)
 
 ## whoami
 
